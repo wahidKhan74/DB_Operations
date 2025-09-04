@@ -56,3 +56,25 @@ INSERT INTO medicines (name, form, strength, manufacturer, supplier_id) VALUES
 -- Cough / Cold
 ('Dextromethorphan Syrup', 'Syrup', '100ml', 'Zydus', 3);
 
+
+
+-- Insert into sales_orders
+INSERT INTO sales_orders (customer_id, order_datetime, total, payment_method, status)
+VALUES 
+  (1, '2025-09-01 10:15:00', 450.00, 'CASH', 'COMPLETED'),
+  (2, '2025-09-01 12:45:00', 1200.00, 'CARD', 'COMPLETED'),
+  (3, '2025-09-02 09:30:00', 300.00, 'UPI', 'NEW');
+
+-- Insert into sales_items
+INSERT INTO sales_items (order_id, line_no, batch_id, medicine_id, qty, sale_price)
+VALUES
+  -- Order 1 items
+  (4, 1, 201, 301, 2, 100.00),
+  (4, 2, 202, 302, 1, 250.00),
+
+  -- Order 2 items
+  (5, 1, 203, 305, 5, 200.00),
+  (5, 2, 204, 306, 1, 200.00),
+
+  -- Order 3 items
+  (6, 1, 205, 308, 3, 100.00);
